@@ -12,21 +12,37 @@ use app\controllers\PostController;
 
 
 $url = $_SERVER["REQUEST_URI"];
+//create instances
+$mainController = new MainController();
+
+$userController = new UserController();
+$postController = new PostController();
 
 //todo add a switch statement router to route based on the url
 switch($url) 
-{
+{ 
+  //if it is "/posts" return an array of posts via the post controller
   case '/posts':
-  
-    
+
+    $posts = $postController->
+    break;
+
+  //if it is "/" return the homepage view from the main controller
   case '/':
-    return
+    $content = $mainController->getHomepageContent();
+    break;
+  
   default:
-  require_once '404 view';
+  require_once '../app/views/404.php';
+  break;
     
   }
   
-  
-//if it is "/posts" return an array of posts via the post controller
-//if it is "/" return the homepage view from the main controller
-//if it is something else return a 404 view from the main controller
+//2. What are some examples of how PHP and JavaScript are alike and how they differ?
+//PHP is a server-side scripting library while javascript is a client side scripting language. PHP additionally supports databases while javascript doesn't. Both languages use script and help build web pages
+//3. Define MVC, what are the responsibilities of each piece?
+//MVC is a design pattern that separates the application into 3 different logical components: Model, View, and Controller.
+// The controller enables interconnection between the view and the model. 
+//The view is used for UI logic as it generates the user interface. 
+//The mdoel corresponds with the data-related logic that user works with. It represents the data that is being transferred between the view and hte controller
+?>
