@@ -42,4 +42,3 @@ switch($url)
 // The controller enables interconnection between the view and the model. 
 //The view is used for UI logic as it generates the user interface. 
 //The mdoel corresponds with the data-related logic that user works with. It represents the data that is being transferred between the view and hte controller
-?>
