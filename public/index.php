@@ -31,7 +31,7 @@ switch($url)
     break;
   
   default:
-  require_once '404.php';
+  $maincontroller-> notFound();
   break;
   }
   
