@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Posts</title>
+    </head>
+    <body>
+    {% for key, in posts %}
+        id: {{value.id}}
+        title: {{value.title}}
+        views: {{value.views}}
+        <br>
+        {% endfor %}
+    </body>
+</html>
