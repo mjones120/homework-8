@@ -22,7 +22,7 @@ class MainController extends Controller
         //an example is in app/controllers/UsersController
         //and return it from this method
         $notfound = new notFound();
-        $template = $this->twig->load('main/404.twig');
+        $template = $this->twig->load('main/error.twig');
         $homepageData = [
             'title' => $notfound -> getAllUsers(),
         ];
