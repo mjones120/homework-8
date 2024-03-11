@@ -15,7 +15,7 @@ class Post
             [
                 'id' => '2',
                 'title' => 'second post',
-                'views' => '5'
+                'views' => '6'
             ]
         ];
 

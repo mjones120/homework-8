@@ -14,7 +14,6 @@ use app\controllers\PostController;
 $url = $_SERVER["REQUEST_URI"];
 //create instances
 $mainController = new MainController();
-$userController = new UserController();
 $postController = new PostController();
 
 //todo add a switch statement router to route based on the url
