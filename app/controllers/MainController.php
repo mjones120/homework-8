@@ -23,11 +23,11 @@ class MainController extends Controller
         //and return it from this method
         
         $template = $this->twig->load('main/404.twig');
-        $notfound = [
+        $homepageData = [
             'title' => '404 Page Not Found',
         ];
 
-        echo $template->render($notfound); 
+        echo $template->render($homepageData); 
     }
 
 }

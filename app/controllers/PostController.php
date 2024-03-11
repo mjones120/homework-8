@@ -10,8 +10,8 @@ class PostController extends Controller
     public function index()
     {
         $posts = new Post();
-        $template = $this ->twig->load('posts/posts.twig');
-        $postArray = ['posts' => $posts->all(),];
-        echo $template->render($postArray);       
+        $template = $this ->twig->load('post/post.twig');
+        $homepageData = ['posts' => $posts->getAllUsers(),];
+        echo $template->render($homepageData);       
     }
 }
