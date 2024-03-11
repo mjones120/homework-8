@@ -29,5 +29,4 @@ class MainController extends Controller
 
         echo $template->render($homepageData); 
     }
-
 }
