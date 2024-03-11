@@ -30,7 +30,7 @@ switch($url)
     break;
   
   default:
-    $mainController-> notFound();
+    $mainController->notFound();
     break;
   }
   
