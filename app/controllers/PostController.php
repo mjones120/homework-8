@@ -11,7 +11,7 @@ class PostController extends Controller
     public function returnPosts()
     {
         $posts = new Post();
-        $template = $this ->twig->load('posts/posts.twig');
+        $template = $this->twig->load('posts/posts.twig');
         $homepageData = [
             'posts' => $posts->getAllPosts(),
         ];
