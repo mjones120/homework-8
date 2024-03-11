@@ -31,8 +31,8 @@ switch($url)
     break;
   
   default:
-  $maincontroller-> notFound();
-  break;
+    $maincontroller-> notFound();
+    break;
   }
   
 //2. What are some examples of how PHP and JavaScript are alike and how they differ?
