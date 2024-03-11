@@ -22,7 +22,7 @@ switch($url)
 { 
   //if it is "/posts" return an array of posts via the post controller
   case '/posts':
-    $posts = $postController->index(); 
+    $posts = $postController->returnPosts(); 
     break;
 
   //if it is "/" return the homepage view from the main controller
