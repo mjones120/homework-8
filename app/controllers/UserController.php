@@ -17,5 +17,4 @@ class UserController extends Controller
         ];
         echo $template->render($homepageData);
     }
-
 }

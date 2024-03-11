@@ -21,10 +21,13 @@ class MainController extends Controller
         //todo create a 404 twig template in app/public/assets/views
         //an example is in app/controllers/UsersController
         //and return it from this method
-        $loader = new FilesystemLoader('app/public/assets/views/');
-        $twig = new Environment($loader);
-        $template = $twig->render('404.twig');
-        return $template;
+        
+        $template = $this->twig->load('main/404.twig');
+        $notfound = [
+            'title' => '404 Page Not Found',
+        ];
+
+        echo $template->render($notfound); 
     }
 
 }
