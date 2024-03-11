@@ -14,7 +14,6 @@ use app\controllers\PostController;
 $url = $_SERVER["REQUEST_URI"];
 //create instances
 $mainController = new MainController();
-
 $userController = new UserController();
 $postController = new PostController();
 
@@ -23,19 +22,17 @@ switch($url)
 { 
   //if it is "/posts" return an array of posts via the post controller
   case '/posts':
-
-    $posts = $postController->
+    $posts = $postController->index(); 
     break;
 
   //if it is "/" return the homepage view from the main controller
   case '/':
-    $content = $mainController->getHomepageContent();
+    $content = $mainController->homepage();
     break;
   
   default:
-  require_once '../app/views/404.php';
+  require_once '404.php';
   break;
-    
   }
   
 //2. What are some examples of how PHP and JavaScript are alike and how they differ?
