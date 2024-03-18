@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>Posts</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     </head>
     <body>
     <!--Create a html form in the posts view with the ability to send a new post to the
@@ -12,6 +13,8 @@ i. a post should have a name and a description at a minimum. -->
     <button id="fetch">
         fetch from backend
     </button>
+    <div id="posts-container"></div>
+    <h3 style ="margin-top: 50px">create a post</h3>
     <form id="form-id">
         <div style="margin: 20px 0">
             <label>name</label>
@@ -26,12 +29,71 @@ i. a post should have a name and a description at a minimum. -->
         </div>
     </form
 
-
+    <div id="data-container"></div>
     {% for key, value in posts %}
         id: {{value.id}}
         title: {{value.title}}
         views: {{value.views}}
         <br>
         {% endfor %}
-    </body>
+
+
+<script>
+$(document).ready(function(){
+    $("#fetch-db").click(function (){
+        $.ajax({
+            url: 'https://localhost.8888/posts'
+            type: "GET",
+            dataType: "json",
+            success: function (data){
+                console.log(data)
+                $('#posts-container').html('')
+                $.each(data, function(key,value){
+                    console.log(value)
+                    $('#posts-container').append(`
+                    <p>${value['id']} ${value['name']}</p>`)
+                });
+            }
+        });
+    })
+
+    $('form-id').on('submit', function (e){
+        e.preventDefault();
+        var name = $('#name-input').val();
+        var desc p $('#desc-input').val();
+
+        const data =
+            {
+                name: name,
+                desc: description
+            }
+            $.ajax({
+                url: 'http://localhost:8888/posts',
+                type: "POST",
+                data: data,
+                dataType: "json",
+                success: function(data){
+                    console.log(data);
+                    $('#name-input').val('')
+                    $('#desc-input').val('')
+                    $('#data-container').html
+                    `<div>
+                            <p>${data.name}</p>
+                            <p>${data.desc}</p>
+                    </div>`
+                )
+            },
+                error: function(data){
+                    $('#data-container').html('')
+                    $.each( data.responseJSON, function( key, value ) {
+                        $('#data-container').append(`
+                                   <p>${value}</p> `)
+                    });
+                }
+            });
+        });
+    });
+    })
+</script>
+</body>
 </html>
