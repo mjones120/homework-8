@@ -11,18 +11,14 @@ class PostController extends Controller
 //an example is in app/controllers/UsersController
     public function returnPosts()
     {
-        $posts = new Post();
-        $template = $this->twig->load('posts/posts.twig');
-        $homepageData = [
-            'posts' => $posts->getAllPosts(),
-        ];
-        echo $template->render($homepageData);
+        include './assets/views/posts/postview.php';
+
     }
 
     public function validate()
     {
-        $name = $_POST['name'];
-        $description = $_POST['description'];
+        $name = $_POST['name'] ? $_POST['name'] : false;
+        $description = $_POST['description'] ? $_POST['description'] : false;
         //validate data
         $errors = [];
         if ($name) {
