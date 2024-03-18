@@ -5,7 +5,7 @@
         <title>Posts</title>
     </head>
     <body>
-    <!--Create an html form in the posts view with the ability to send a new post to the
+    <!--Create a html form in the posts view with the ability to send a new post to the
 backend.
 i. a post should have a name and a description at a minimum. -->
     <h1>Post Views</h1>
@@ -14,8 +14,8 @@ i. a post should have a name and a description at a minimum. -->
     </button>
     <form id="form-id">
         <div style="margin: 20px 0">
-          <label>name</label>
-        <input type="text" id='name-input' name="name">
+            <label>name</label>
+            <input type="text" id='name-input' name="name">
         <br>
         <label>description</label>
         <input type="text" id='desc-input' name="description">

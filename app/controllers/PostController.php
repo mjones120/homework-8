@@ -20,8 +20,8 @@ class PostController extends Controller
 
     public function requestPosts()
     {
-        $name = $_POST['name'] ? $_POST['name'] : false;
-        $description = $_POST['description'] ? $_POST['description'] : false;
+        $name = $_POST['name'];
+        $description = $_POST['description'];
         //validate data
         $errors = [];
         if ($name) {
