@@ -60,7 +60,7 @@ $(document).ready(function(){
                     name: name,
                     description: description,
                 }
-            $.ajax({
+            let ajax = $.ajax({
                 url: 'http://localhost:8888/posts',
                 type: "POST",
                 data: data,
