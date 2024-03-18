@@ -44,17 +44,16 @@ class PostController extends Controller
             echo json_encode($errors);
             exit();
         }
-        http_response_code(201);
-        $success = ['message' => 'Post was successful'];
-        echo json_encode($success);
-        exit();
-
+        //http_response_code(201);
+        //$success = ['message' => 'Post was successful'];
+        //echo json_encode($success);
+        //exit();
         $returnData=
         [
             'name' => $name,
             'description'=> $description,
         ];
         echo "<span class='form-success'>Post is successful!</span>";
-
+        exit();
     }
 }
