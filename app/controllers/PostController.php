@@ -33,8 +33,7 @@ class PostController extends Controller
             $errors['requiredName'] = 'name is required';
         }
 
-        if($description)
-        {
+        if ($description) {
             $description = htmlspecialchars($description, ENT_QUOTES | ENT_HTML5, 'UTF-8', true);
             if (strlen($description) < 5) {
                 $errors['descShort'] = 'description is too short';
@@ -43,8 +42,7 @@ class PostController extends Controller
             $errors['requiredDesc'] = 'description is required';
         }
 
-        if(count($errors))
-        {
+        if (count($errors)) {
             http_response_code(400);
             echo json_encode($errors);
             exit();
@@ -55,13 +53,4 @@ class PostController extends Controller
         exit();
 
     }
-
-
-
-
-
-
-
-
-
 }
