@@ -10,28 +10,30 @@ use app\controllers\MainController;
 use app\controllers\UserController;
 use app\controllers\PostController;
 
-$uri = $_SERVER["REQUEST_URI"];
+$url = $_SERVER["REQUEST_URI"];
 $method = $_SERVER["REQUEST_METHOD"];
 
-if($uri ==='/posts'and $method === 'GET')
+if($url ==='/posts'and $method === 'GET')
 {
     $postController = new PostController();
     $post = $postController->returnPosts();
 }
-else if($uri === '/posts'and $method === 'POST')
+else if($url === '/posts'and $method === 'POST')
 {
     $postController = new PostController();
     $post = new $postController->validate();
 }
-else if ($uri === '/')
-{
-    $mainController = new MainController();
-    $mainController->homepage();
-}
-else{
-    $mainController = new MainController();
-    $mainController->notFound();
+else {
+    if($url === '/')
+    {
+        $mainController = new MainController();
+        $mainController->homepage();
+    }
+    else{
+        $mainController = new MainController();
+        $mainController->notFound();
 
+    }
 }
 
 
