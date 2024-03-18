@@ -34,8 +34,6 @@ else {
         $mainController->notFound();
     }
 }
-
-
   //if it is "/posts" return an array of posts via the post controller
   //case '/posts':
   //  $postController->requestPosts();

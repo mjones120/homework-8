@@ -17,8 +17,8 @@ i. a post should have a name and a description at a minimum. -->
             <label>name</label>
             <input type="text" id='name-input' name="name">
         <br>
-        <label>description</label>
-        <input type="text" id='desc-input' name="description">
+            <label>description</label>
+            <input type="text" id='desc-input' name="description">
         <br>
         <div style="margin: 20px 0">
             <input type="submit" value="submit">
