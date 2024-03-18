@@ -21,13 +21,14 @@ switch($url)
 { 
   //if it is "/posts" return an array of posts via the post controller
   case '/posts':
-    $postController->returnPosts(); 
+    $postController->createPosts();
     break;
 
   //if it is "/" return the homepage view from the main controller
   case '/':
     $mainController->homepage();
     break;
+
   
   default:
     $mainController->notFound();
