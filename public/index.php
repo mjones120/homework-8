@@ -17,20 +17,23 @@ $mainController = new MainController();
 $postController = new PostController();
 
 //todo add a switch statement router to route based on the url
-switch($url) 
-{ 
+
+if($url ==='/posts') {
+    include('postview.php');
+}
+
+
   //if it is "/posts" return an array of posts via the post controller
-  case '/posts':
-    $postController->requestPosts();
-    break;
+  //case '/posts':
+  //  $postController->requestPosts();
+  //  break;
 
   //if it is "/" return the homepage view from the main controller
-  case '/':
-    $mainController->homepage();
-    break;
-
+  //case '/':
+  //  $mainController->homepage();
+  //  break;
   
-  default:
-    $mainController->notFound();
-    break;
-  }
+  //default:
+   // $mainController->notFound();
+    //break;
+
