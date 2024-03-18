@@ -4,6 +4,7 @@ namespace app\controllers;
 use app\core\Controller;
 use app\models\Post;
 
+
 class PostController extends Controller
 {
 //todo make a method to return some posts, post objects should come from the post model class
@@ -12,7 +13,6 @@ class PostController extends Controller
     public function returnPosts()
     {
         include './assets/views/posts/postview.php';
-
     }
 
     public function validate()
@@ -48,5 +48,13 @@ class PostController extends Controller
         $success = ['message' => 'Post was successful'];
         echo json_encode($success);
         exit();
+
+        $returnData=
+        [
+            'name' => $name,
+            'description'=> $description,
+        ];
+        echo "<span class='form-success'>Post is successful!</span>";
+
     }
 }

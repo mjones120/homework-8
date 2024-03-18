@@ -51,49 +51,41 @@ $(document).ready(function(){
                 $.each(data, function(key,value){
                     console.log(value)
                     $('#posts-container').append(`
-                    <p>${value['id']} ${value['name']}</p>`)
+                   <p>${value['id']} ${value['name']}</p>`)
                 });
             }
         });
     })
+
 
     $('form-id').on('submit', function (e){
         e.preventDefault();
         var name = $('#name-input').val();
         var desc p $('#desc-input').val();
 
+
         const data =
             {
                 name: name,
                 desc: description
             }
-            $.ajax({
-                url: 'http://localhost:8888/posts',
-                type: "POST",
-                data: data,
-                dataType: "json",
-                success: function(data){
-                    console.log(data);
-                    $('#name-input').val('')
-                    $('#desc-input').val('')
-                    $('#data-container').html
+        $.ajax({
+            url: 'http://localhost:8888/posts',
+            type: "POST",
+            data: data,
+            dataType: "json",
+            success: function(data){
+                console.log(data);
+                $('#name-input').val('')
+                $('#desc-input').val('')
+                $('#data-container').html
                     `<div>
-                            <p>${data.name}</p>
-                            <p>${data.desc}</p>
-                    </div>`
-                )
+                           <p>${data.name}</p>
+                           <p>${data.desc}</p>
+                   </div>`
+            )
             },
-                error: function(data){
-                    $('#data-container').html('')
-                    $.each( data.responseJSON, function( key, value ) {
-                        $('#data-container').append(`
-                                   <p>${value}</p> `)
-                    });
-                }
-            });
-        });
-    });
-    })
+
 </script>
 </body>
 </html>
