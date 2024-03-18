@@ -24,11 +24,7 @@ i. a post should have a name and a description at a minimum. -->
             <input type="submit" value="submit">
             <br/>
         </div>
-    </form>
-
-
-
-
+    </form
 
 
     {% for key, value in posts %}
