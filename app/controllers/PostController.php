@@ -3,6 +3,7 @@
 namespace app\controllers;
 use app\core\Controller;
 use app\models\Post;
+
 class PostController extends Controller
 {
 //todo make a method to return some posts, post objects should come from the post model class
@@ -18,7 +19,7 @@ class PostController extends Controller
         echo $template->render($homepageData);
     }
 
-    public function requestPosts()
+    public function validate()
     {
         $name = $_POST['name'];
         $description = $_POST['description'];
@@ -51,6 +52,5 @@ class PostController extends Controller
         $success = ['message' => 'Post was successful'];
         echo json_encode($success);
         exit();
-
     }
 }

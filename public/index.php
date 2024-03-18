@@ -10,16 +10,28 @@ use app\controllers\MainController;
 use app\controllers\UserController;
 use app\controllers\PostController;
 
+$uri = $_SERVER["REQUEST_URI"];
+$method = $_SERVER["REQUEST_METHOD"];
 
-$url = $_SERVER["REQUEST_URI"];
-//create instances
-$mainController = new MainController();
-$postController = new PostController();
+if($uri ==='/posts'and $method === 'GET')
+{
+    $postController = new PostController();
+    $post = $postController->returnPosts();
+}
+else if($uri === '/posts'and $method === 'POST')
+{
+    $postController = new PostController();
+    $post = new $postController->validate();
+}
+else if ($uri === '/')
+{
+    $mainController = new MainController();
+    $mainController->homepage();
+}
+else{
+    $mainController = new MainController();
+    $mainController->notFound();
 
-//todo add a switch statement router to route based on the url
-
-if($url ==='/posts') {
-    include('postview.php');
 }
 
 
