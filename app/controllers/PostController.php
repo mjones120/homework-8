@@ -43,7 +43,6 @@ class PostController extends Controller
             $errors['requiredDesc'] = 'description is required';
         }
 
-        }
         if(count($errors))
         {
             http_response_code(400);
