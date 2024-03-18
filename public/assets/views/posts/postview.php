@@ -30,13 +30,6 @@ i. a post should have a name and a description at a minimum. -->
     </form
 
     <div id="data-container"></div>
-    {% for key, value in posts %}
-        id: {{value.id}}
-        title: {{value.title}}
-        views: {{value.views}}
-        <br>
-        {% endfor %}
-
 
 <script>
 $(document).ready(function(){
@@ -57,34 +50,32 @@ $(document).ready(function(){
         });
     })
 
-
-    $('form-id').on('submit', function (e){
-        e.preventDefault();
-        var name = $('#name-input').val();
-        var desc p $('#desc-input').val();
-
-
-        const data =
-            {
-                name: name,
-                desc: description
-            }
-        $.ajax({
-            url: 'http://localhost:8888/posts',
-            type: "POST",
-            data: data,
-            dataType: "json",
-            success: function(data){
-                console.log(data);
-                $('#name-input').val('')
-                $('#desc-input').val('')
-                $('#data-container').html
-                    `<div>
-                           <p>${data.name}</p>
-                           <p>${data.desc}</p>
-                   </div>`
-            )
-            },
+    $('form-id').on('submit',
+        function (e) {
+            e.preventDefault();
+            var name = $('#name-input').val();
+            var description = $('#desc-input').val();
+            const data =
+                {
+                    name: name,
+                    description: description,
+                }
+            $.ajax({
+                url: 'http://localhost:8888/posts',
+                type: "POST",
+                data: data,
+                dataType: "json",
+                success: function (data) {
+                    console.log(data);
+                    $('#name-input').val('')
+                    $('#desc-input').val('')
+                    $('#data-container').html
+                            `
+                                <div>
+                                    <p>${data.name}</p>
+                                    <p>${data.desc}</p>
+                                </div>`
+                });
 
 </script>
 </body>
