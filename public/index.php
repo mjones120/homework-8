@@ -23,17 +23,17 @@ else if($uri === '/posts'and $method === 'POST')
     $postController = new PostController();
     $post = $postController->validate();
 }
-else {
-    if($uri === '/')
-    {
+else if($uri === '/')
+{
         $mainController = new MainController();
         $mainController->homepage();
-    }
-    else{
+}
+else
+{
         $mainController = new MainController();
         $mainController->notFound();
-    }
 }
+
   //if it is "/posts" return an array of posts via the post controller
   //case '/posts':
   //  $postController->requestPosts();

@@ -73,7 +73,7 @@ $(document).ready(function(){
                             `
                                 <div>
                                     <p>${data.name}</p>
-                                    <p>${data.desc}</p>
+                                    <p>${data.description}</p>
                                 </div>`
                 });
 

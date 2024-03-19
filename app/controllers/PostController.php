@@ -47,7 +47,7 @@ class PostController extends Controller
         }
         $returnData = [
             'name'=> $name,
-            'description' =>$description,
+            'description'=>$description,
         ];
         echo "<span class='form-success'>Post is successful!</span>";
         exit();
